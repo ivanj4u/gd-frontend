@@ -12,27 +12,30 @@
     <!-- Component Navbar -->
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="#">Pengajuan</a></li>
-        <li><a href="#">Simulasi</a></li>
+        <li *ngIf="auth.isLogin()"><a href="#">Pengajuan</a></li>
+        <li *ngIf="auth.isLogin()"><a href="#">Simulasi</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-        <li>
+        <li *ngIf="!auth.isLogin()">
           <a class="btn btn-lg" data-toggle="collapse" href="#nav-collapse"
              aria-expanded="false" aria-controls="nav-collapse2">Masuk</a>
         </li>
+        <li>
+          <a *ngIf="auth.isLogin()" class="btn btn-lg" href="#" (click)="auth.logout()">Keluar</a>
+        </li>
       </ul>
       <div class="collapse nav navbar-nav nav-collapse" id="nav-collapse">
-        <form class="navbar-form navbar-right form-inline" role="form">
+        <form *ngIf="!auth.isLogin()" class="navbar-form navbar-right form-inline" role="form">
           <div class="form-group">
             <label class="sr-only" for="username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Username" autofocus required/>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" placeholder="Username" autofocus required/>
           </div>
           <div class="form-group">
             <label class="sr-only" for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" required/>
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Password" required/>
           </div>
-          <button type="submit" class="btn btn-success">Masuk</button>
+          <button type="submit" class="btn btn-success" (click)="doLogin()" >Masuk</button>
         </form>
       </div>
 

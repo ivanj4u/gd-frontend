@@ -154,11 +154,11 @@ svg {
   background-image: url("http://www.sparklephotography.com/images/slides/slide-2.jpg");
 }
 .slide:nth-child(2) .slide__overlay-path {
-  fill: #a09f86;
+  fill: #161a21;
 }
 @media (max-width: 991px) {
   .slide:nth-child(2) .slide__text {
-    background-color: rgba(160, 159, 134, 0.8);
+    background-color: rgba(22, 26, 33, 0.8);
   }
 }
 .slide:nth-child(3) {
@@ -184,11 +184,11 @@ svg {
   background-image: url("http://www.sparklephotography.com/images/slides/slide-5.jpg");
 }
 .slide:nth-child(4) .slide__overlay-path {
-  fill: #a09f86;
+  fill: #161a21;
 }
 @media (max-width: 991px) {
   .slide:nth-child(4) .slide__text {
-    background-color: rgba(160, 159, 134, 0.8);
+    background-color: rgba(22, 26, 33, 0.8);
   }
 }
 .slide__content {

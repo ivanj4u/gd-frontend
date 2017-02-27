@@ -6,24 +6,33 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {RouterModule} from "@angular/router";
+import { ForgetComponent } from './forget/forget.component';
+import {FormsModule} from "@angular/forms";
+import {AuthService} from "./auth-service";
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     NavbarComponent,
     FooterComponent,
     IndexComponent,
     LoginComponent,
-    RegisterComponent],
-  exports : [
+    RegisterComponent,
+    ForgetComponent],
+  exports: [
     NavbarComponent,
     IndexComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgetComponent
+  ],
+  providers: [
+    AuthService
   ]
 })
 export class SharedModule { }
