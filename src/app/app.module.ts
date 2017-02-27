@@ -5,6 +5,16 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {SharedModule} from "./shared/shared.module";
+import {RouterModule, Routes} from "@angular/router";
+import {LoginComponent} from "./shared/login/login.component";
+import {RegisterComponent} from "./shared/register/register.component";
+import {IndexComponent} from "./shared/index/index.component";
+
+const myRouter : Routes = [
+  {path : 'login', component : LoginComponent},
+  {path : 'register', component : RegisterComponent},
+  {path : '**', component : IndexComponent}
+]
 
 @NgModule({
   declarations: [
@@ -14,7 +24,8 @@ import {SharedModule} from "./shared/shared.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    RouterModule.forRoot(myRouter)
   ],
   providers: [],
   bootstrap: [AppComponent]

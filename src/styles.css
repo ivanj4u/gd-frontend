@@ -70,6 +70,11 @@ img.grayscale {
   color:#777777;
 }
 
+.header .btn:focus {
+  background-color:transparent;
+  color:#777777;
+}
+
 .navbar a {
   color:#fff;
   font-size:14px;
@@ -126,8 +131,6 @@ img.grayscale {
 .alt li a:hover, .alt li.active {
   background-color:#5D17BA;
 }
-
-
 
 .blurb {
   padding: 120px 0;
